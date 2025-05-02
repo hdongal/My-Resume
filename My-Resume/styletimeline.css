@@ -1,0 +1,21 @@
+/* #my-roadmap{
+    background-color: black;
+    color: black;
+} */
+
+.roadmap.roadmap--orientation-auto .roadmap__events:after{
+    background-color:#65558F;
+}
+.roadmap.roadmap--orientation-auto .roadmap__events__event:after,.roadmap.roadmap--orientation-auto .roadmap__events__event:before{
+    background-color:#65558F;
+}
+.roadmap.roadmap--orientation-horizontal .roadmap__events:after{
+    background-color:#65558F;
+}
+.roadmap.roadmap--orientation-horizontal .roadmap__events__event:after,.roadmap.roadmap--orientation-horizontal .roadmap__events__event:before{
+    background-color:#65558F;
+}
+
+.roadmap.roadmap--orientation-auto .roadmap__events__event{
+    font-size: 24px;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/My-Resume/js/Dynamic-Animated-Timeline-Slider/dist/jquery.roadmap.min.css" rel="stylesheet" type="text/css" />  <!-- add jQuery roadmap CSS -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styletimeline.css">
+	<link rel="stylesheet" href="/My-Resume/js/3d-folding-panel-master/css/style.css"> <!-- Resource style -->
+
+	<script src="/My-Resume/js/3d-folding-panel-master/js/modernizr.js"></script> <!-- Modernizr -->
+
+    <title>My Resume</title>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div class="nav-container">
+        <div class="nav-bar">
+            <a href="#personal-detail">Personal Detail</a>
+            <a href="#education">Education</a>
+            <a href="#activities">Extra-curricular activities</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- personal information section -->
+    <div class="content">
+        <div class="heading"><p id = "personal-detail">PERSONAL INFORMATION</p></div>
+        <div class="information-section-container">
+            <div class="image-profile-container">
+                <img src="/images/me.jpg" alt = "hdong">
+            </div>
+            <div class="information-container">
+                <p><strong> Full Name:</strong> Quan Hieu Dong</p>
+                <p><strong> Date Of Birth:</strong> 16/06/2006</p>
+                <p><strong> Studying at: </strong>RMIT Univeristy SGS Campus</p>
+                <p><strong> Major:</strong> Information Technology</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- education section -->
+    <div class="content">
+        <div class="heading" ><p id = "education">EDUCATION</p></div>
+        <div id="my-roadmap"></div>
+    </div>
+    
+    <!-- activities section -->
+    <div class="content">
+        <div class="heading"><p id = "activities">EXTRA-CURRICULAR ACTIVITIES</p></div>    
+    
+        <main class="cd-main">
+            <ul class="cd-gallery">
+                <li class="cd-item">
+                    <a href="/My-Resume/SUMUM.html">
+                        <div>
+                            <h2>LHP's SUMUM CLUB</h2>
+                            <p>(2021 - 2023)</p>
+                            <b>View More</b>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="cd-item">
+                    <a href="/My-Resume/FTC.html">
+                        <div>
+                            <h2>RMIT VIETNAM FINTECH CLUB</h2>
+                            <p>(2025 - NOW)</p>
+                            <b>View More</b>
+                        </div>
+                    </a>
+                </li>
+            </ul> <!-- .cd-gallery -->
+        </main> <!-- .cd-main -->
+
+        <div class="cd-folding-panel">
+            
+            <div class="fold-left"></div> <!-- this is the left fold -->
+            
+            <div class="fold-right"></div> <!-- this is the right fold -->
+            
+            <div class="cd-fold-content">
+                <!-- content will be loaded using javascript -->
+            </div>
+
+            <a class="cd-close" href="#0"></a>
+        </div> <!-- .cd-folding-panel -->
+    </div>
+
+    <!-- contact section -->
+    <div class="content">
+        <div class="heading"><p id = "contact">CONTACT</p></div>
+        <div class="contact-container">
+            <div class="address"> <!--github-->
+                <i class="fa-brands fa-github" style="color: #000000; font-size: 24px;"></i>
+                <p>Github: <a href="https://github.com/hdongal">hdongal</a> </p>
+            </div>
+            <div class="address"> <!--mail-->
+                <i class="fa-solid fa-envelope" style="color: #000000; font-size: 24px;"></i>
+                <p>Mail: <a href="mailto:S4116602@rmit.edu.vn">Outlook</a> </p>
+            </div>
+            <div class="address"> <!--social media-->
+                <i class="fa-brands fa-medium" style="color: #000000; font-size: 24px;"></i>
+                <p>Social Media: <a href="https://www.facebook.com/ongquan.970479/">Facebook</a> </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Include jQuery -->
+     <script src="/My-Resume/js/3d-folding-panel-master/js/jquery-2.1.1.js"></script>
+
+     <!-- Include jQuery Roadmap Plugin -->
+     <script src="/My-Resume/js/Dynamic-Animated-Timeline-Slider/dist/jquery.roadmap.js" type="text/javascript"></script>
+
+     <script type="text/javascript">
+         $(document).ready(function(){
+
+             var events = [
+                 {
+                     date:'2017 - 2021',
+                     content:'Nguyen Van Phu secondary school'
+                 },
+                 {
+                     date: '2021 - 2024',
+                     content: 'Le Hong Phong high school for the gifted'
+                 },
+                 {
+                     date: '2024 - NOW',
+                     content: 'RMIT Univeristy SGS Campus'
+                 },
+             ];
+
+             $('#my-roadmap').roadmap(events, {
+                 eventsPerSlide: 4,
+                 slide: 1,
+                 prevArrow: '<i class="material-icons">keyboard_arrow_left</i>',
+                 nextArrow: '<i class="material-icons">keyboard_arrow_right</i>',
+                 onBuild: function() {
+                     console.log('onBuild event')
+                 }
+             });
+         });
+     </script>
+    <script src="/My-Resume/js/3d-folding-panel-master/js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+<footer>
+    <p>&copy; hdong</p>
+</footer>
+</html>
