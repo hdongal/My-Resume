@@ -25,6 +25,8 @@ body{
     padding-bottom: 20px;
 }
 .nav-bar{
+    display: flex;
+    flex-direction: row;
     background-color: #65558F;
     padding: 20px;
     border-bottom-left-radius: 30px;
@@ -48,9 +50,10 @@ body{
     font-size: 57px;
     margin: 10vh 0;
     border: solid black 1px;
-    height: 10vh;
+    height: auto;
     line-height: 10vh;
     padding-left: 20px;
+    /* word-wrap: break-word; */
 }
 
 /* personal-details section*/
@@ -109,6 +112,38 @@ body{
 }
 
 footer{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
+/* Resposive*/
+@media screen and (max-width: 800px) {
+    .content{
+        margin: 0 5%;
+    }
+    .nav-bar a{
+        font-size: 12px;
+    }
+    .heading{
+        font-size: 36px;
+        height: auto;
+        border: solid black 1px;
+        padding: 0 10px;
+        margin: 5vh;
+    }
+    .heading p{
+        width: fit-content;
+    }
+    .information-section-container{
+        flex-direction: column;
+        row-gap: 5vh;
+    }
+    .information-container p{
+        font-size: 16px;
+    }
+    .contact-container .address{
+        font-size: 16px;
+    }
+    .contact-container p{
+        font-size: 16px;
+    }
+}
